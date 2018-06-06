@@ -1,4 +1,5 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
@@ -6,7 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ## [Unreleased]
 
 ## 2018-06-06
+
 ### Added
+
 - net-misc/anydesk-2.9.5
 - net-im/slack-bin-3.0.5
 - net-im/slack-bin-3.1.0
@@ -20,4 +23,3 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 
 ### Removed
-
