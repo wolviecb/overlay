@@ -1,7 +1,7 @@
 repoman:
   image:
     name: tandrade/repoman:latest
-    entrypoint: [""]
+    entrypoint: ["/bin/bash", "-c" ]
   script:
     - cd /builds/wolvie/wolvie-overlay
     - pwd
