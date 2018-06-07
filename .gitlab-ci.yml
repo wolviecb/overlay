@@ -1,0 +1,5 @@
+repoman:
+  image: tandrade/repoman:latest
+  script:
+    - cd /builds
+    - run.sh
