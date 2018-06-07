@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-06-07
+
+### Added
+
+- app-editors/visual-studio-code-1.24.0
+
+### Changed
+
+- We have CI :)
+
+### Removed
+
+
 ## 2018-06-06
 
 ### Added
