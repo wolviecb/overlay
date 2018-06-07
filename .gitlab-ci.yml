@@ -1,3 +1,0 @@
-repoman:
-  script:
-    -  docker run --rm -v $(pwd):/var/lib/local tandrade/repoman:latest
