@@ -1,5 +1,5 @@
 repoman:
   image: tandrade/repoman:latest
   script:
-    - cd /builds
-    - run.sh
+    - cd /builds/wolvie/wolvie-overlay
+    - run.sh -d full
