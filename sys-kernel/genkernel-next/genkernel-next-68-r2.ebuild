@@ -13,7 +13,7 @@ HOMEPAGE="https://www.gentoo.org/"
 LICENSE="GPL-2"
 SLOT="0"
 
-IUSE="cryptsetup dmraid gpg iscsi mdadm plymouth selinux"
+IUSE="cryptsetup dmraid gpg iscsi mdadm plymouth selinux certs"
 DOCS=( AUTHORS )
 
 DEPEND="app-text/asciidoc
@@ -40,7 +40,7 @@ src_prepare() {
 	default
 	sed -i "/^GK_V=/ s:GK_V=.*:GK_V=${PV}:g" "${S}/genkernel" || \
 		die "Could not setup release"
-	epatch "${FILESDIR}/add-cert-support.diff"
+	use certs && epatch "${FILESDIR}/add-cert-support.diff"
 }
 
 src_install() {
