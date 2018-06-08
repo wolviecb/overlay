@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-06-08
+
+### Added
+
+- sys-kernel/genkernel-next/genkernel-next-68-r2
+
+### Changed
+
+### Removed
+
+- sys-kernel/genkernel-next/genkernel-next-68-r1
+
 ## 2018-06-07
 
 ### Added
@@ -19,7 +31,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Removed
 
 - net-im/slack-bin/
-
 
 ## 2018-06-06
 
