@@ -17,7 +17,7 @@ RESTRICT="mirror strip"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE=""
+IUSE="libsecret"
 
 DEPEND="
 	>=media-libs/libpng-1.2.46:0
@@ -32,6 +32,8 @@ RDEPEND="
 	>=net-print/cups-2.0.0
 	x11-libs/libnotify
 	x11-libs/libXScrnSaver
+	dev-libs/nss
+	libsecret? ( app-crypt/libsecret[crypt] )
 "
 
 ARCH=$(/usr/bin/getconf LONG_BIT)
