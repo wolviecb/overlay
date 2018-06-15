@@ -5,9 +5,7 @@ Personal overlay with some version bumps and hacks, use with discretion.
 ## Install
 
 ```shell
-cd /somewhere
-git clone ....
-ln -s /somewhere/wolvie.conf /etc/portage/repos.conf/wolvie.conf
+cd /usr/local/portage
+git clone git@gitlab.com:wolvie/wolvie-overlay.git
+ln -s /usr/local/portage/wolvie/wolvie.conf /etc/portage/repos.conf/wolvie.conf
 ```
-
-and edit wolvie.conf to match /somewhere
