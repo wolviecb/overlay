@@ -6,6 +6,6 @@ Personal overlay with some version bumps and hacks, use with discretion.
 
 ```shell
 cd /usr/local/portage
-git clone git@gitlab.com:wolvie/wolvie-overlay.git
+git clone git@gitlab.com:wolvie/overlay.git wolvie
 ln -s /usr/local/portage/wolvie/wolvie.conf /etc/portage/repos.conf/wolvie.conf
 ```
