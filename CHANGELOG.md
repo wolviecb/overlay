@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-07-12
+
+### Added
+
+- app-crypt/gnupg/gnupg-2.2.6
+
+### Changed
+
+### Removed
+
 ## 2018-07-11
 
 - Migrated to private gitlab
@@ -19,8 +29,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Changed
 
 ### Removed
-
-## [Unreleased]
 
 ## 2018-06-10
 
