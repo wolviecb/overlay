@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Added
 
 - app-editors/visual-studio-code-1.26.1
+- dev-python/python-efl-1.21.0
 
 ### Changed
 
