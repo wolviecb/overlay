@@ -1,5 +1,7 @@
 # wolvie overlay
 
+[![Build Status](https://git.thebarrens.nu/wolvie/overlay/badges/master/build.svg)](https://git.thebarrens.nu/wolvie/overlay/)
+
 Personal overlay with some version bumps and hacks, use with discretion.
 
 ## Install
