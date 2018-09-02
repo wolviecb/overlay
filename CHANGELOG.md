@@ -11,10 +11,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Added
 
 - net-misc/anydesk-4.0.0
+- dev-python/awscli-1.16.6
 
 ### Changed
 
 ### Removed
+
+- app-crypt/gnupg
+- app-admin/pass
 
 ## 2018-08-27
 
