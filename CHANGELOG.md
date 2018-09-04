@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-09-04
+
+### Added
+
+- dev-python/botocore-1.11.6
+
+### Changed
+
+- dev-python/awscli-1.16.6: fixed dependencies
+
+### Removed
+
 ## 2018-09-02
 
 ### Added
