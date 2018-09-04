@@ -13,4 +13,4 @@ git clone git@git.thebarrens.nu:wolvie/overlay.git wolvie
 ln -s /usr/local/portage/wolvie/wolvie.conf /etc/portage/repos.conf/wolvie.conf
 ```
 
-[#overlay slack channel](https://thebarrens-nu.slack.com/messages/CBUJYFQCU)
+[#overlay](https://thebarrens-nu.slack.com/messages/CBUJYFQCU) slack channel
