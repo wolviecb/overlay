@@ -17,12 +17,14 @@ KEYWORDS="~amd64"
 IUSE=""
 
 RDEPEND="
-	>=dev-python/botocore-1.8.20[${PYTHON_USEDEP}]
+	>=dev-python/botocore-1.11[${PYTHON_USEDEP}]
 	dev-python/colorama[${PYTHON_USEDEP}]
 	dev-python/docutils[${PYTHON_USEDEP}]
 	<=dev-python/rsa-3.5.0[${PYTHON_USEDEP}]
 	>=dev-python/s3transfer-0.1.12[${PYTHON_USEDEP}]
+	>=dev-python/jmespath-0.9.3[${PYTHON_USEDEP}]
 	<=dev-python/pyyaml-3.12[${PYTHON_USEDEP}]
+	>=dev-python/nose-1.3.7[${PYTHON_USEDEP}]
 
 "
 DEPEND="${RDEPEND}
