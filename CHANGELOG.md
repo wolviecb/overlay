@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-10-09
+
+### Added
+
+- app-editors/visual-studio-code-1.28.0
+
+### Changed
+
+### Removed
+
+- app-editors/visual-studio-code-1.26.1
+- app-editors/visual-studio-code-1.27.1
+- app-editors/visual-studio-code-1.27.2
+- dev-python/python-efl-1.21.0
+
 ## 2018-09-17
 
 ### Added
