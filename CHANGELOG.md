@@ -20,6 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 - app-editors/visual-studio-code-1.27.1
 - app-editors/visual-studio-code-1.27.2
 - dev-python/python-efl-1.21.0
+- net-misc/anydesk-2.9.5
 
 ## 2018-09-17
 
