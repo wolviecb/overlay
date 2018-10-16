@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-10-16
+
+### Added
+
+- dev-python/awscli-1.16.34
+
+### Changed
+
+### Removed
+
+
 ## 2018-10-12
 
 ### Added
