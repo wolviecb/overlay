@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>wolvie@gmail.com</email>
+		<name>Thomas Andrade</name>
+		<description>wolvie Overlay: This one was copied from https://github.com/anomen-s/anomen-overlay</description>
+	</maintainer>
+	<use>
+		<flag name="mssql">Mysql support</flag>
+		<flag name="mysql">MS SQL Server support</flag>
+		<flag name="sybase">Sybase support</flag>
+	</use>
+</pkgmetadata>
