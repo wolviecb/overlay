@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
 ## [Unreleased]
 
+## 2018-10-24
+
+### Added
+
+- dev-db/sqldeveloper-18.3.0.277.2354
+
+### Changed
+
+### Removed
+
 ## 2018-10-23
 
 ### Added
