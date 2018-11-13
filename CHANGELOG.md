@@ -4,7 +4,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
-## [Unreleased]
+## 2018-11-13
+
+### Added
+
+- app-editors/visual-studio-code-1.29.0
+
+### Changed
+
+### Removed
 
 ## 2018-10-24
 
