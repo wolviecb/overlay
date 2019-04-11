@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-04-11
+
+### Added
+
+- app-editors/visual-studio-code-1.33.1
+- app-editors/vscodium-1.33.1
+
+### Changed
+
+### Removed
+
+- dev-python/awscli
+- dev-python/botocore
+
 ## 2019-04-08
 
 ### Added
