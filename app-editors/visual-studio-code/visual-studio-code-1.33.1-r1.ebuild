@@ -21,9 +21,8 @@ IUSE="libsecret"
 
 DEPEND="
 	>=media-libs/libpng-1.2.46:0
-	>=x11-libs/gtk+-2.24.8-r1:2
+	>=x11-libs/gtk+-3.0:3
 	x11-libs/cairo
-	gnome-base/gconf
 	x11-libs/libXtst
 "
 

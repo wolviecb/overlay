@@ -7,23 +7,19 @@ inherit eutils pax-utils
 
 DESCRIPTION="Multiplatform Visual Studio Code from Microsoft"
 HOMEPAGE="https://code.visualstudio.com"
-BASE_URI="https://vscode-update.azurewebsites.net/${PV}"
 SRC_URI="
-	x86? ( ${BASE_URI}/linux-ia32/stable ->  ${P}-x86.tar.gz )
-	amd64? ( ${BASE_URI}/linux-x64/stable -> ${P}-amd64.tar.gz )
-	"
+	amd64? ( https://github.com/VSCodium/vscodium/releases/download/${PV}/VSCodium-linux-x64-${PV}.tar.gz -> ${P}-x64.tar.gz )"
 RESTRICT="mirror strip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="libsecret"
 
 DEPEND="
 	>=media-libs/libpng-1.2.46:0
-	>=x11-libs/gtk+-2.24.8-r1:2
+	>=x11-libs/gtk+-3.0:3
 	x11-libs/cairo
-	gnome-base/gconf
 	x11-libs/libXtst
 "
 
@@ -36,21 +32,19 @@ RDEPEND="
 	libsecret? ( app-crypt/libsecret[crypt] )
 "
 
-ARCH=$(/usr/bin/getconf LONG_BIT)
-
-[[ ${ARCH} == "64" ]] && S="${WORKDIR}/VSCode-linux-x64" || S="${WORKDIR}/VSCode-linux-ia32"
-
 QA_PRESTRIPPED="opt/${PN}/code"
+
+S="${WORKDIR}"
 
 src_install(){
 	pax-mark m code
 	insinto "/opt/${PN}"
 	doins -r *
-	dosym "../../opt/${PN}/bin/code" "/usr/bin/${PN}"
+	dosym "../../opt/${PN}/bin/vscodium" "/usr/bin/${PN}"
 	make_desktop_entry "${PN}" "Visual Studio Code" "${PN}" "Development;IDE"
 	doicon "${FILESDIR}/${PN}.png"
-	fperms +x "/opt/${PN}/code"
-	fperms +x "/opt/${PN}/bin/code"
+	fperms +x "/opt/${PN}/vscodium"
+	fperms +x "/opt/${PN}/bin/vscodium"
 	fperms +x "/opt/${PN}/libnode.so"
 	fperms +x "/opt/${PN}/resources/app/node_modules.asar.unpacked/vscode-ripgrep/bin/rg"
 	insinto "/usr/share/licenses/${PN}"
