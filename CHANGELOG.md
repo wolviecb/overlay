@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-06-07
+
+### Added
+
+- app-editors/vscodium-1.35.0
+- app-editors/visual-studio-code-1.35.0
+- app-admin/terraform-0.11.14
+- app-admin/terraform-0.12.0
+- app-admin/terraform-0.12.1
+
+### Changed
+
+### Removed
+
 ## 2019-05-17
 
 ### Added
