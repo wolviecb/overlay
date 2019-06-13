@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-06-13
+
+### Added
+
+- app-editors/vscodium-1.35.1
+- app-editors/visual-studio-code-1.35.1
+- dev-db/sqldeveloper-19.1.0.094.2042
+
+### Changed
+
+### Removed
+
 ## 2019-06-07
 
 ### Added
