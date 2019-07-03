@@ -7,16 +7,13 @@ inherit eutils pax-utils
 
 DESCRIPTION="Multiplatform Visual Studio Code from Microsoft"
 HOMEPAGE="https://code.visualstudio.com"
-BASE_URI="https://vscode-update.azurewebsites.net/${PV}"
 SRC_URI="
-	x86? ( ${BASE_URI}/linux-ia32/stable ->  ${P}-x86.tar.gz )
-	amd64? ( ${BASE_URI}/linux-x64/stable -> ${P}-amd64.tar.gz )
-	"
+	amd64? ( https://github.com/VSCodium/vscodium/releases/download/${PV}/VSCodium-linux-x64-${PV}.tar.gz -> ${P}-x64.tar.gz )"
 RESTRICT="mirror strip"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64"
 IUSE="libsecret"
 
 DEPEND="
@@ -35,22 +32,20 @@ RDEPEND="
 	libsecret? ( app-crypt/libsecret[crypt] )
 "
 
-ARCH=$(/usr/bin/getconf LONG_BIT)
-
-[[ ${ARCH} == "64" ]] && S="${WORKDIR}/VSCode-linux-x64" || S="${WORKDIR}/VSCode-linux-ia32"
-
 QA_PRESTRIPPED="opt/${PN}/code"
+
+S="${WORKDIR}"
 
 src_install(){
 	pax-mark m code
 	insinto "/opt/${PN}"
 	doins -r *
-	dosym "../../opt/${PN}/bin/code" "/usr/bin/${PN}"
+	dosym "../../opt/${PN}/bin/codium" "/usr/bin/${PN}"
+	dosym "../../opt/${PN}/bin/codium" "/usr/bin/codium"
 	make_desktop_entry "${PN}" "Visual Studio Code" "${PN}" "Development;IDE"
 	doicon "${FILESDIR}/${PN}.png"
-	fperms +x "/opt/${PN}/code"
-	fperms +x "/opt/${PN}/bin/code"
-	fperms +x "/opt/${PN}/libnode.so"
+	fperms +x "/opt/${PN}/codium"
+	fperms +x "/opt/${PN}/bin/codium"
 	fperms +x "/opt/${PN}/resources/app/node_modules.asar.unpacked/vscode-ripgrep/bin/rg"
 	insinto "/usr/share/licenses/${PN}"
 }
@@ -58,4 +53,7 @@ src_install(){
 pkg_postinst(){
 	elog "You may install some additional utils, so check them in:"
 	elog "https://code.visualstudio.com/Docs/setup#_additional-tools"
+	elog ""
+	elog "Upstream renamed the binary from vscodium to codium, I'm keeping"
+	elog "the vscodium link for this release but will drop in the future"
 }
