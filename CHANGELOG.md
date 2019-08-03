@@ -4,11 +4,32 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-08-03
+
+### Added
+
+- app-admin/terraform-0.12.6
+- net-im/slack-bin-4.0.1
+- dev-db/sqldeveloper-19.2.0.206.2117
+
+## Removed
+
+- net-im/slack-bin-3.3.7
+- net-im/slack-bin-3.3.8
+- app-admin/terraform-0.11.*
+- app-admin/terraform-0.12.0
+- app-admin/terraform-0.12.1
+- x11-terms/terminology
+- dev-python/python-efl
+- net-misc/anydesk
+- sys-kernel/genkernel-next
+- dev-db/sqldeveloper-18.3.0.277.2354
+
 ## 2019-07-27
 
 ### Added
 
-- x11-terms/terminolog-1.5.0
+- x11-terms/terminology-1.5.0
 
 ## 2019-07-09
 
