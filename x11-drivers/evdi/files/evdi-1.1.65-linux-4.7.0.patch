@@ -1,0 +1,102 @@
+--- a/module/evdi_cursor.c	2016-08-31 20:35:23.748415448 +0200
++++ b/module/evdi_cursor.c	2016-08-31 20:39:00.567706226 +0200
+@@ -92,7 +92,13 @@
+					EVDI_CURSOR_W, EVDI_CURSOR_H);
+			return -EINVAL;
+		}
++
++#if KERNEL_VERSION(4, 7, 0) > LINUX_VERSION_CODE
+		obj = drm_gem_object_lookup(crtc->dev, file, handle);
++#else
++		obj = drm_gem_object_lookup(file, handle);
++#endif
++
+		if (!obj) {
+			DRM_ERROR("failed to lookup gem object.\n");
+			return -EINVAL;
+
+--- a/module/evdi_fb.c	2016-08-31 20:43:18.066214421 +0200
++++ b/module/evdi_fb.c	2016-08-31 20:44:48.784508806 +0200
+@@ -500,7 +500,11 @@
+		return ERR_PTR(-EINVAL);
+	}
+
++#if KERNEL_VERSION(4, 7, 0) > LINUX_VERSION_CODE
+	obj = drm_gem_object_lookup(dev, file, mode_cmd->handles[0]);
++#else
++	obj = drm_gem_object_lookup(file, mode_cmd->handles[0]);
++#endif
+	if (obj == NULL)
+		return ERR_PTR(-ENOENT);
+
+--- a/module/evdi_gem.c	2016-08-31 20:48:23.583792869 +0200
++++ b/module/evdi_gem.c	2016-08-31 20:49:40.035709703 +0200
+@@ -208,7 +208,13 @@
+	int ret = 0;
+
+	mutex_lock(&dev->struct_mutex);
++
++#if KERNEL_VERSION(4, 7, 0) > LINUX_VERSION_CODE
+	obj = drm_gem_object_lookup(dev, file, handle);
++#else
++	obj = drm_gem_object_lookup(file, handle);
++#endif
++
+	if (obj == NULL) {
+		ret = -ENOENT;
+		goto unlock;
+
+--- a/module/evdi_main.c	2016-08-31 20:52:19.499423308 +0200
++++ b/module/evdi_main.c	2016-08-31 20:52:54.935432172 +0200
+@@ -79,7 +79,13 @@
+
+	drm_vblank_cleanup(dev);
+	drm_kms_helper_poll_fini(dev);
++
++#if KERNEL_VERSION(4, 7, 0) > LINUX_VERSION_CODE
+	drm_connector_unplug_all(dev);
++#else
++	drm_connector_unregister_all(dev);
++#endif
++
+	evdi_fbdev_unplug(dev);
+	if (evdi->cursor)
+		evdi_cursor_free(evdi->cursor);
+
+--- a/module/evdi_modeset.c	2016-08-31 20:55:27.515926952 +0200
++++ b/module/evdi_modeset.c	2016-08-31 20:58:44.202301123 +0200
+@@ -152,7 +152,11 @@
+		unsigned long flags = 0;
+
+		spin_lock_irqsave(&dev->event_lock, flags);
++#if KERNEL_VERSION(4, 8, 0) > LINUX_VERSION_CODE
+		drm_send_vblank_event(dev, 0, event);
++#else
++		drm_crtc_send_vblank_event(crtc, event);
++#endif
+		spin_unlock_irqrestore(&dev->event_lock, flags);
+	}
+ }
+@@ -194,7 +198,11 @@
+			unsigned long flags = 0;
+
+			spin_lock_irqsave(&dev->event_lock, flags);
++#if KERNEL_VERSION(4, 8, 0) > LINUX_VERSION_CODE
+			drm_send_vblank_event(dev, 0, flip_queue->event);
++#else
++			drm_crtc_send_vblank_event(crtc, flip_queue->event);
++#endif
+			spin_unlock_irqrestore(&dev->event_lock, flags);
+		}
+		flip_queue->event = event;
+@@ -366,7 +374,9 @@
+
+	drm_mode_create_dirty_info_property(dev);
+
+-#if KERNEL_VERSION(4, 5, 0) <= LINUX_VERSION_CODE
++#if KERNEL_VERSION(4, 8, 0) <= LINUX_VERSION_CODE
++
++#elif KERNEL_VERSION(4, 5, 0) <= LINUX_VERSION_CODE
+	drm_dev_set_unique(dev, dev_name(dev->dev));
+ #elif KERNEL_VERSION(3, 16, 0) <= LINUX_VERSION_CODE
+ 	drm_dev_set_unique(dev, "%s", dev_name(dev->dev));
