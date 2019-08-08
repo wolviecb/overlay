@@ -1,0 +1,41 @@
+From b7606bccc0cb9484c2845a3e556faf60ed3c0bff Mon Sep 17 00:00:00 2001
+From: Dawid Kurek <dawid.kurek@displaylink.com>
+Date: Mon, 24 Oct 2016 11:13:33 +0200
+Subject: [PATCH] Remove dirty_info property
+
+It has been removed in
+https://github.com/torvalds/linux/commit/6ab10b76ff6252bd9be0849c40f5865e39a29961
+---
+ module/evdi_connector.c | 3 +++
+ module/evdi_modeset.c   | 2 ++
+ 2 files changed, 5 insertions(+)
+
+diff --git a/module/evdi_connector.c b/module/evdi_connector.c
+index ddea5e4..87b76f5 100644
+--- a/module/evdi_connector.c
++++ b/module/evdi_connector.c
+@@ -144,7 +144,10 @@ int evdi_connector_init(struct drm_device *dev, struct drm_encoder *encoder)
+ #endif
+ 	drm_mode_connector_attach_encoder(connector, encoder);
+ 
++#if KERNEL_VERSION(4, 9, 0) > LINUX_VERSION_CODE
+ 	drm_object_attach_property(&connector->base,
+ 				   dev->mode_config.dirty_info_property, 1);
++#endif
++
+ 	return 0;
+ }
+diff --git a/module/evdi_modeset.c b/module/evdi_modeset.c
+index b10d353..196fac4 100644
+--- a/module/evdi_modeset.c
++++ b/module/evdi_modeset.c
+@@ -372,7 +372,9 @@ int evdi_modeset_init(struct drm_device *dev)
+ 
+ 	dev->mode_config.funcs = &evdi_mode_funcs;
+ 
++#if KERNEL_VERSION(4, 9, 0) > LINUX_VERSION_CODE
+ 	drm_mode_create_dirty_info_property(dev);
++#endif
+ 
+ #if KERNEL_VERSION(4, 8, 0) <= LINUX_VERSION_CODE
+ 
