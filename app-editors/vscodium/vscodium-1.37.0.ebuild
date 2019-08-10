@@ -40,12 +40,12 @@ src_install(){
 	pax-mark m code
 	insinto "/opt/${PN}"
 	doins -r *
-	dosym "../../opt/${PN}/bin/vscodium" "/usr/bin/${PN}"
+	dosym "../../opt/${PN}/bin/codium" "/usr/bin/${PN}"
+	dosym "../../opt/${PN}/bin/codium" "/usr/bin/codium"
 	make_desktop_entry "${PN}" "Visual Studio Code" "${PN}" "Development;IDE"
 	doicon "${FILESDIR}/${PN}.png"
-	fperms +x "/opt/${PN}/vscodium"
-	fperms +x "/opt/${PN}/bin/vscodium"
-	fperms +x "/opt/${PN}/libnode.so"
+	fperms +x "/opt/${PN}/codium"
+	fperms +x "/opt/${PN}/bin/codium"
 	fperms +x "/opt/${PN}/resources/app/node_modules.asar.unpacked/vscode-ripgrep/bin/rg"
 	insinto "/usr/share/licenses/${PN}"
 }
@@ -53,4 +53,7 @@ src_install(){
 pkg_postinst(){
 	elog "You may install some additional utils, so check them in:"
 	elog "https://code.visualstudio.com/Docs/setup#_additional-tools"
+	elog ""
+	elog "Upstream renamed the binary from vscodium to codium."
+	elog "remember to update your aliases and shortcuts"
 }
