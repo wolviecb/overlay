@@ -47,13 +47,17 @@ src_install(){
 	fperms +x "/opt/${PN}/codium"
 	fperms +x "/opt/${PN}/bin/codium"
 	fperms +x "/opt/${PN}/resources/app/node_modules.asar.unpacked/vscode-ripgrep/bin/rg"
+	fperms +x "/opt/${PN}/resources/app/extensions/git/dist/askpass.sh"
 	insinto "/usr/share/licenses/${PN}"
+	for i in resources/app/LICEN*; do
+		newins "${i}" "$(basename ${i})"
+	done
 }
 
 pkg_postinst(){
 	elog "You may install some additional utils, so check them in:"
 	elog "https://code.visualstudio.com/Docs/setup#_additional-tools"
 	elog ""
-	elog "Upstream renamed the binary from vscodium to codium, I'm keeping"
-	elog "the vscodium link for this release but will drop in the future"
+	elog "Upstream renamed the binary from vscodium to codium."
+	elog "remember to update your aliases and shortcuts"
 }
