@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-09-12
+
+### Added
+
+- app-editors/vscodium-1.38.1
+- app-editors/visual-studio-code-1.38.1
+- app-crypt/keybase-4.4.0
+
 ## 2019-09-05
 
 ### Added
