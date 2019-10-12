@@ -1,9 +1,8 @@
 ---
 kind: pipeline
-type: exec
-name: default
+name: repoman
 
 steps:
-- name: repoman
+- name: full
   commands:
   - docker run -v $PWD:/repo -w repo tandrade/repoman -d full
