@@ -1,6 +1,6 @@
 # wolvie overlay
 
-[![License](https://img.shields.io/badge/license-GLWTS-blue.svg)](https://git.thebarrens.nu/wolvie/overlay/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-GLWTS-blue.svg)](https://git.thebarrens.nu/wolvie/overlay/blob/master/LICENSE) [![Build Status](https://drone.thebarrens.nu/api/badges/wolvie/overlay/status.svg)](https://drone.thebarrens.nu/wolvie/overlay)
 
 Personal overlay with some version bumps and hacks, use with discretion.
 

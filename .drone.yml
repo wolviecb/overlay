@@ -1,0 +1,5 @@
+pipeline:
+  repoman:
+    image: tandrade/repoman:latest
+    commands:
+      - repoman -d full
