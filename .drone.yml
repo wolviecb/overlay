@@ -1,8 +1,5 @@
----
-kind: pipeline
-name: repoman
-
-steps:
-- name: full
-  commands:
-  - docker run -v $PWD:/repo -w repo tandrade/repoman -d full
+pipeline:
+  repoman:
+    image: tandrade/repoman:latest
+    commands:
+      - repoman -d full
