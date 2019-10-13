@@ -1,5 +1,16 @@
-pipeline:
-  repoman:
-    image: tandrade/repoman:latest
-    commands:
-      - repoman -d full
+---
+kind: pipeline
+type: docker
+name: repoman
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: validate
+  image: tandrade/repoman:latest
+  commands:
+    - repoman -d full
+
+...
