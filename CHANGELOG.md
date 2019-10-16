@@ -9,6 +9,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 ### Added
 
 - net-im/slack-bin-4.1.1
+- app-editors/vscodium-1.39.2
+- app-editors/visual-studio-code-1.39.2
 
 ### Removed
 
