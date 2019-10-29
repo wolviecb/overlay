@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-10-29
+
+### Added
+
+- app-crypt/keybase-4.7.2
+
 ## 2019-10-19
 
 ### Added
