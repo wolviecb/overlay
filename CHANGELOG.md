@@ -4,6 +4,20 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 
+## 2019-12-23
+
+### Added
+
+- app-editors/visual-studio-code-1.41.0
+- app-editors/visual-studio-code-1.41.1
+- app-editors/vscodium-1.41.0
+- app-editors/vscodium-1.41.1
+
+### Removed
+
+- app-editors/visual-studio-code-1.39.2
+- app-editors/vscodium-1.39.2
+
 ## 2019-11-29
 
 ### Added
