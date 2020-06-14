@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories xmlns="" version="1.0">
+  <repo quality="experimental" status="unofficial">
+    <name><![CDATA[wolvie]]></name>
+    <description lang="en"><![CDATA[overlay by wolviecb]]></description>
+    <homepage>http://github.com/wolviecb/overlay</homepage>
+    <owner type="person">
+      <email>wolvie@gmail.com</email>
+      <name><![CDATA[Thomas Andrade]]></name>
+    </owner>
+    <source type="git">https://github.com/wolviecb/overlay.git</source>
+    <feed>http://github.com/wolviecb/overlay/commits/master.atom</feed>
+  </repo>
+</repositories>
