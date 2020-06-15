@@ -4,6 +4,8 @@
 
 Personal overlay with some version bumps and hacks, use with discretion.
 
+I've been without access to a gentoo box for a while, updates will be uncommon :)
+
 ## Install
 
 ```shell
